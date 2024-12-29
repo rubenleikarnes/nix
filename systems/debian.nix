@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+  # Enable Home Manager
+  programs.home-manager.enable = true;
+
+  # Allow unfree software to be installed
   nixpkgs.config.allowUnfree = true;
 
   # Home Manager needs a bit of information about you and the paths it should
