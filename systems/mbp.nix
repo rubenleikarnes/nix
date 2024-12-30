@@ -1,12 +1,7 @@
 { config, pkgs, ... }:
 {
+  # Allow unfree software to be installed
   nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs: [
-    kubectl
-    nixd # Required for nix-darwin
-    ollama
-  ];
 
   # System settings
   system.defaults = {

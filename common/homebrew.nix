@@ -1,8 +1,12 @@
 { pkgs, ... }:
 {
+  environment.variables.HOMEBREW_NO_ANALYTICS = "1";
+
   # Homebrew
   homebrew = {
     enable = true;
+    rosetta = true;
+    user = "ruben";
     brews = [
       "mas" # Mac App Store CLI
       "fisher" # Fish plugin manager

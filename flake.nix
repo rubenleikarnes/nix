@@ -10,23 +10,16 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, nix-homebrew }: 
-  {
+  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, nix-homebrew }: {
     darwinConfigurations."mbp" = nix-darwin.lib.darwinSystem {
       modules = [
         ./systems/mbp.nix
-        ./common/packages.nix
+        ./common/nix-darwin.nix
         ./common/homebrew.nix
         ./common/editor.nix
         ./common/shell.nix
-        nix-homebrew.darwinModules.nix-homebrew {
-          nix-homebrew = {
-            enable = true;
-            enableRosetta = true;
-            user = "ruben";
-          };
-        }
       ];
+      # nix.package = nixpkgs.pkgs.nix;
     };
 
     homeConfigurations."debian" = home-manager.lib.homeManagerConfiguration {
