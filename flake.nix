@@ -53,6 +53,7 @@
             "busycal"
             "chatgpt"
             "colorsnapper"
+            "discord"
             "docker"
             "figma"
             "font-ibm-plex-mono"
