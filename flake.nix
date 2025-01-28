@@ -22,6 +22,7 @@
           pkgs.curl
           pkgs.fish
           pkgs.fzf
+          pkgs.delta
           pkgs.git
           pkgs.kubectl
           pkgs.neovim
@@ -30,6 +31,7 @@
           pkgs.openssl
           pkgs.ripgrep # Required for nvim
           pkgs.starship
+          pkgs.tmux
           pkgs.tldr
         ];
 
@@ -49,13 +51,17 @@
             "brave-browser"
             "appgate-sdp-client"
             "busycal"
+            "chatgpt"
             "colorsnapper"
+            "docker"
             "figma"
             "font-ibm-plex-mono"
             "font-inter"
             "font-jetbrains-mono-nerd-font"
             "font-sf-pro"
+            "forklift"
             "github"
+            "ghostty"
             "google-chrome"
             "handbrake"
             "istat-menus"
@@ -71,9 +77,12 @@
             "sync"
             "switchresx"
             "tailscale"
+            "teamviewer"
             "the-unarchiver"
             "vlc"
+            "waterfox-classic"
             "whatsapp"
+            "wireshark"
             "zed"
             "zen-browser"
         ];
@@ -98,9 +107,11 @@
             "/System/Applications/Mail.app"
             "/Applications/Slack.app"
             "/Applications/BusyCal.app"
+            "/Applications/Things3.app"
             "/Applications/1Password.app"
             "/Applications/Zed.app"
-            "/Applications/iTerm.app"
+            "/Applications/Ghostty.app"
+            "/Applications/Github Desktop.app"
             "/Applications/Remote Desktop Manager.app"
             "/Applications/Obsidian.app"
         ];
@@ -108,7 +119,7 @@
         NSGlobalDomain.AppleICUForce24HourTime = true;
         NSGlobalDomain.AppleInterfaceStyle = "Dark";
         NSGlobalDomain.KeyRepeat = 2;
-        universalaccess.closeViewScrollWheelToggle = true;
+          # universalaccess.closeViewScrollWheelToggle = true;
       };
 
       # Necessary for using flakes on this system.
