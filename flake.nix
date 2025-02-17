@@ -20,6 +20,7 @@
         [
           pkgs.coreutils
           pkgs.curl
+          pkgs.ffmpeg
           pkgs.fish
           pkgs.fzf
           pkgs.delta
