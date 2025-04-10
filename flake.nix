@@ -32,6 +32,7 @@
           pkgs.openssl
           pkgs.ripgrep # Required for nvim
           pkgs.starship
+          pkgs.stern
           pkgs.tmux
           pkgs.tldr
         ];
@@ -41,6 +42,7 @@
         enable = true;
         brews = [
             "mas" # Mac App Store CLI
+            "openjdk"
             "fisher" # Fish plugin manager
             "rafi/tap/kubectl-config-import" # Tool for importing kubectl config files
         ];
@@ -64,12 +66,15 @@
             "ghostty"
             "google-chrome"
             "handbrake"
+            "imageoptim"
             "istat-menus"
             "iterm2"
+            "microsoft-auto-update"
             "microsoft-office-businesspro"
             "netnewswire"
             "obsidian"
             "ollama"
+            "postman"
             "rectangle"
             "remote-desktop-manager"
             "slack"
