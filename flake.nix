@@ -45,6 +45,7 @@
             "openjdk"
             "fisher" # Fish plugin manager
             "rafi/tap/kubectl-config-import" # Tool for importing kubectl config files
+            "localias" # Tool used for setting up local urls for development
         ];
         casks = [
             "1password"
@@ -92,7 +93,8 @@
             "zen-browser"
         ];
         taps = [
-          "rafi/tap"
+          "rafi/tap" # https://github.com/rafi/kubectl-config-import
+          "peterldowns/tap/localias" # https://github.com/peterldowns/localias
         ];
         masApps = {
           Ivory = 6444602274;
