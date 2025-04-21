@@ -18,6 +18,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
+          pkgs.caddy
           pkgs.coreutils
           pkgs.curl
           pkgs.ffmpeg
@@ -45,7 +46,6 @@
             "openjdk"
             "fisher" # Fish plugin manager
             "rafi/tap/kubectl-config-import" # Tool for importing kubectl config files
-            "localias" # Tool used for setting up local urls for development
         ];
         casks = [
             "1password"
@@ -94,7 +94,6 @@
         ];
         taps = [
           "rafi/tap" # https://github.com/rafi/kubectl-config-import
-          "peterldowns/tap/localias" # https://github.com/peterldowns/localias
         ];
         masApps = {
           Ivory = 6444602274;
