@@ -121,6 +121,7 @@
             "/Applications/Github Desktop.app"
             "/Applications/Remote Desktop Manager.app"
             "/Applications/Obsidian.app"
+            "/Applications/ChatGPT.app"
         ];
         loginwindow.GuestEnabled = false;
         NSGlobalDomain.AppleICUForce24HourTime = true;
