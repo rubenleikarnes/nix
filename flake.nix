@@ -29,6 +29,7 @@
           pkgs.kubectl
           pkgs.neovim
           pkgs.nixd # Required for nix-darwin
+          pkgs.nmap
           pkgs.ollama
           pkgs.openssl
           pkgs.ripgrep # Required for nvim
