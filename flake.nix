@@ -26,6 +26,7 @@
           pkgs.fzf
           pkgs.delta
           pkgs.git
+          pkgs.helix
           pkgs.kubectl
           pkgs.neovim
           pkgs.nixd # Required for nix-darwin
@@ -37,6 +38,7 @@
           pkgs.stern
           pkgs.tmux
           pkgs.tldr
+          pkgs.yt-dlp
         ];
 
       # Homebrew
@@ -91,7 +93,7 @@
             "whatsapp"
             "wireshark"
             "zed"
-            "zen-browser"
+            "zen"
         ];
         taps = [
           "rafi/tap" # https://github.com/rafi/kubectl-config-import
@@ -106,11 +108,13 @@
         onActivation.upgrade = true;
       };
 
+      system.primaryUser = "ruben";
+
       # System settings
       system.defaults = {
         dock.autohide = true;
         dock.persistent-apps = [
-            "/Applications/Zen Browser.app"
+            "/Applications/Zen.app"
             "/Applications/Microsoft Outlook.app"
             "/System/Applications/Mail.app"
             "/Applications/Slack.app"
