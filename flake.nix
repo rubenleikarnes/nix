@@ -46,7 +46,6 @@
         enable = true;
         brews = [
             "mas" # Mac App Store CLI
-            "openjdk"
             "fisher" # Fish plugin manager
             "rafi/tap/kubectl-config-import" # Tool for importing kubectl config files
         ];
