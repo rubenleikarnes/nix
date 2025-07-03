@@ -26,6 +26,7 @@
           pkgs.fzf
           pkgs.delta
           pkgs.git
+          pkgs.gitu # git tui inspired by magit
           pkgs.helix
           pkgs.kubectl
           pkgs.neovim
@@ -58,7 +59,7 @@
             "chatgpt"
             "colorsnapper"
             "discord"
-            "docker"
+            "docker-desktop"
             "figma"
             "font-ibm-plex-mono"
             "font-inter"
@@ -68,7 +69,7 @@
             "github"
             "ghostty"
             "google-chrome"
-            "handbrake"
+            "handbrake-app"
             "imageoptim"
             "istat-menus"
             "iterm2"
@@ -76,7 +77,7 @@
             "microsoft-office-businesspro"
             "netnewswire"
             "obsidian"
-            "ollama"
+            "ollama-app"
             "postman"
             "rectangle"
             "remote-desktop-manager"
@@ -84,13 +85,14 @@
             "spotify"
             "sync"
             "switchresx"
-            "tailscale"
+            "tailscale-app"
+            "tunnelblick"
             "teamviewer"
             "the-unarchiver"
             "vlc"
             "waterfox-classic"
             "whatsapp"
-            "wireshark"
+            "wireshark-app"
             "zed"
             "zen"
         ];
