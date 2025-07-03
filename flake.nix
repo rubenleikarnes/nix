@@ -86,7 +86,6 @@
             "remote-desktop-manager"
             "slack"
             "spotify"
-            "steam"
             "sync"
             "switchresx"
             "tailscale-app"
