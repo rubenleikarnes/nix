@@ -18,9 +18,11 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
+          pkgs.bat # modern cat alternative
           pkgs.caddy
           pkgs.coreutils
           pkgs.curl
+          pkgs.fd
           pkgs.ffmpeg
           pkgs.fish
           pkgs.fzf
@@ -40,6 +42,7 @@
           pkgs.tmux
           pkgs.tldr
           pkgs.yt-dlp
+          pkgs.zoxide
         ];
 
       # Homebrew
