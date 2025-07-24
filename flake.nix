@@ -41,6 +41,7 @@
           pkgs.stern
           pkgs.tmux
           pkgs.tldr
+          pkgs.wget
           pkgs.yt-dlp
           pkgs.zoxide
         ];
