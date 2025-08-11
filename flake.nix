@@ -57,6 +57,7 @@
         casks = [
             "1password"
             "alfred"
+            "arc"
             "balenaetcher"
             "brave-browser"
             "appgate-sdp-client"
