@@ -37,6 +37,7 @@
           pkgs.ollama
           pkgs.openssl
           pkgs.ripgrep # Required for nvim
+          pkgs.sshpass # Required for AT300 config push
           pkgs.starship
           pkgs.stern
           pkgs.tmux
