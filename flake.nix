@@ -30,6 +30,7 @@
           pkgs.git
           pkgs.gitu # git tui inspired by magit
           pkgs.helix
+          pkgs.inetutils # telnet etc, from apple
           pkgs.kubectl
           pkgs.neovim
           pkgs.nixd # Required for nix-darwin
@@ -62,12 +63,15 @@
             "balenaetcher"
             "brave-browser"
             "appgate-sdp-client"
+            "base" # sqlite editor
             "busycal"
             "chatgpt"
+            "claude" # ai
             "colorsnapper"
             "discord"
             "docker-desktop"
             "figma"
+            "firefox"
             "font-ibm-plex-mono"
             "font-inter"
             "font-jetbrains-mono-nerd-font"
@@ -96,6 +100,7 @@
             "tunnelblick"
             "teamviewer"
             "the-unarchiver"
+            "utm"
             "vlc"
             "waterfox-classic"
             "whatsapp"
