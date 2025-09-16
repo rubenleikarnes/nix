@@ -2,131 +2,127 @@
   description = "";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable"; # unstable channel for latest pkgs
+    nix-darwin.url = "github:LnL7/nix-darwin"; # nix-darwin module system
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs"; # follow nixpkgs version
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew"; # nix-homebrew integration
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
   let
     configuration = { pkgs, ... }: {
-      # Allow install of unfree packages
-      nixpkgs.config.allowUnfree = true;
+      nixpkgs.config.allowUnfree = true; # allow installation of unfree packages
 
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages =
+      environment.systemPackages =  # global installes from nix packages
         [
           pkgs.bat # modern cat alternative
-          pkgs.caddy
-          pkgs.coreutils
-          pkgs.curl
-          pkgs.fd
-          pkgs.ffmpeg
-          pkgs.fish
-          pkgs.fzf
-          pkgs.delta
-          pkgs.git
-          pkgs.gitu # git tui inspired by magit
-          pkgs.helix
-          pkgs.inetutils # telnet etc, from apple
-          pkgs.kubectl
-          pkgs.neovim
-          pkgs.nixd # Required for nix-darwin
-          pkgs.nmap
-          pkgs.ollama
-          pkgs.openssl
-          pkgs.ripgrep # Required for nvim
-          pkgs.sshpass # Required for AT300 config push
-          pkgs.starship
-          pkgs.stern
-          pkgs.tmux
-          pkgs.tldr
-          pkgs.wget
-          pkgs.yt-dlp
-          pkgs.zoxide
+          pkgs.caddy # web server / reverse proxy
+          pkgs.coreutils # GNU core utilities
+          pkgs.curl # http tool
+          pkgs.fd # fast alternative to find
+          pkgs.ffmpeg # video toolkit
+          pkgs.fish # current shell favorite
+          pkgs.fzf # fuzzy finder
+          pkgs.delta # better git diff viewer
+          pkgs.git # version control
+          pkgs.gitu # git tui
+          pkgs.helix # nvim alternative
+          pkgs.inetutils # telnet, ftp, etc (from apple)
+          pkgs.kubectl # k8s cli
+          pkgs.neovim # vim alternative
+          pkgs.nixd # nix language server (required by nix)
+          pkgs.nmap # network scanner
+          pkgs.ollama # local llm runner
+          pkgs.openssl # tls/ssl toolkit
+          pkgs.ripgrep # fast grep (required by nvim)
+          pkgs.sshpass # non-interactive ssh password (required for AT300 config push)
+          pkgs.starship # shell prompt
+          pkgs.stern # tail logs from k8s pods
+          pkgs.tmux # terminal multiplexer
+          pkgs.tldr # simplified man pages
+          pkgs.wget # cli downloader
+          pkgs.yt-dlp # youTube downloader
+          pkgs.zoxide # smarter cd replacement
         ];
 
-      # Homebrew
-      homebrew = {
+      homebrew = { # manage homebrew packages/casks/apps
         enable = true;
         brews = [
-            "mas" # Mac App Store CLI
-            "fisher" # Fish plugin manager
-            "rafi/tap/kubectl-config-import" # Tool for importing kubectl config files
+            "mas" # Mac App Store cli
+            "fisher" # fish plugin manager
+            "rafi/tap/kubectl-config-import" # tool for importing kubectl config files
         ];
         casks = [
-            "1password"
-            "alfred"
-            "arc"
-            "balenaetcher"
-            "brave-browser"
-            "appgate-sdp-client"
-            "base" # sqlite editor
-            "busycal"
-            "chatgpt"
-            "claude" # ai
-            "colorsnapper"
-            "discord"
-            "docker-desktop"
-            "figma"
-            "firefox"
-            "font-ibm-plex-mono"
-            "font-inter"
-            "font-jetbrains-mono-nerd-font"
-            "font-sf-pro"
-            "forklift"
-            "github"
-            "ghostty"
-            "google-chrome"
-            "handbrake-app"
-            "imageoptim"
-            "istat-menus"
-            "iterm2"
-            "microsoft-auto-update"
-            "microsoft-office-businesspro"
-            "netnewswire"
-            "obsidian"
-            "ollama-app"
-            "postman"
-            "rectangle"
-            "remote-desktop-manager"
-            "slack"
-            "spotify"
-            "sync"
-            "switchresx"
-            "tailscale-app"
-            "tunnelblick"
-            "teamviewer"
-            "the-unarchiver"
-            "utm"
-            "vlc"
-            "waterfox-classic"
-            "whatsapp"
-            "wireshark-app"
-            "zed"
-            "zen"
+          "1password" # password manager
+          "alfred" # spotlight alternative
+          "arc" # chrome alternative
+          "balenaetcher" # bootable usb creator
+          "brave-browser" # another chrome alternative
+          "appgate-sdp-client" # work vpn
+          "base" # sqlite editor
+          "busycal" # calendar app
+          "chatgpt" # openai desktop client
+          "claude" # anthropic desktop client
+          "colorsnapper" # color picker tool
+          "discord" # chat
+          "docker-desktop" # container platform
+          "figma" # photoshop alternative
+          "firefox" # browser
+          "font-ibm-plex-mono" # dev font
+          "font-inter" # ui font
+          "font-jetbrains-mono-nerd-font" # dev font
+          "font-sf-pro" # apple system font
+          "forklift" # ftp client
+          "github" # github Desktop
+          "ghostty" # terminal emulator
+          "google-chrome" # browser
+          "handbrake-app" # ffmpeg gui
+          "imageoptim" # image optimizer
+          "istat-menus" # menu bar system monitor
+          "iterm2" # terminal emulator
+          "microsoft-auto-update" # updater for ms apps
+          "microsoft-office-businesspro" # ms office
+          "netnewswire" # rss reader
+          "obsidian" # markdown notes
+          "ollama-app" # openai app
+          "postman" # api tool
+          "rectangle" # window manager
+          "remote-desktop-manager" # rdp client
+          "slack" # work chat
+          "spotify" # music
+          "sync" # file sync
+          "switchresx" # display control
+          "tailscale-app" # vpn
+          "tunnelblick" # openvpn client
+          "teamviewer" # remote desktop
+          "the-unarchiver" # archive extractor
+          "utm" # virtual machine app
+          "vlc" # media player
+          "waterfox-classic" # legacy browser
+          "whatsapp" # messaging
+          "wireshark-app" # network packet analyzer
+          "zed" # code editor
+          "zen" # firefox alternative
         ];
         taps = [
-          "rafi/tap" # https://github.com/rafi/kubectl-config-import
+          "rafi/tap" # kubectl-config-import tap https://github.com/rafi/kubectl-config-import
         ];
         masApps = {
-          Ivory = 6444602274;
-          Hyperspace = 6739505345;
-          Things3 = 904280696;
+          Ivory = 6444602274; # mastodon client
+          Hyperspace = 6739505345; # disk space reclaimer
+          Things3 = 904280696; # task manager
         };
-        onActivation.cleanup = "zap";
-        onActivation.autoUpdate = true;
-        onActivation.upgrade = true;
+        onActivation.cleanup = "zap"; # removes old versions, caches etc
+        onActivation.autoUpdate = true; # updates before install
+        onActivation.upgrade = true; # auto upgrade
       };
 
       system.primaryUser = "ruben";
 
       # System settings
       system.defaults = {
-        dock.autohide = true;
-        dock.persistent-apps = [
+        dock.autohide = true; # hide dock
+        dock.persistent-apps = [ # pinned apps
             "/Applications/Zen.app"
             "/Applications/Microsoft Outlook.app"
             "/System/Applications/Mail.app"
@@ -141,28 +137,22 @@
             "/Applications/Obsidian.app"
             "/Applications/ChatGPT.app"
         ];
-        loginwindow.GuestEnabled = false;
-        NSGlobalDomain.AppleICUForce24HourTime = true;
-        NSGlobalDomain.AppleInterfaceStyle = "Dark";
-        NSGlobalDomain.KeyRepeat = 2;
-          # universalaccess.closeViewScrollWheelToggle = true;
+        loginwindow.GuestEnabled = false; # disable guest login
+        NSGlobalDomain.AppleICUForce24HourTime = true; # 24h clock
+        NSGlobalDomain.AppleInterfaceStyle = "Dark"; # dark mode
+        NSGlobalDomain.KeyRepeat = 2; # fast key repeat
+        # universalaccess.closeViewScrollWheelToggle = true; # zoom toggle
       };
 
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
-
-      # Enable alternative shell support in nix-darwin.
-      programs.fish.enable = true;
-
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+      nix.settings.experimental-features = "nix-command flakes"; # enable flakes & nix-command
+      programs.fish.enable = true; # enable Fish shell in nix-darwin
+      system.configurationRevision = self.rev or self.dirtyRev or null; # track flake git revision
 
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
       system.stateVersion = 5;
 
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
+      nixpkgs.hostPlatform = "aarch64-darwin"; # target platform (Apple Silicon)
     };
   in
   {
@@ -172,10 +162,10 @@
       modules = [
       	configuration
         nix-homebrew.darwinModules.nix-homebrew {
-            nix-homebrew = {
-            enable = true;
-            enableRosetta = true;
-            user = "ruben";
+          nix-homebrew = {
+            enable = true; # enable nix-homebrew
+            enableRosetta = true; # allow x86_64 apps on arm64
+            user = "ruben"; # link Homebrew to user account
           };
        	}
       ];
