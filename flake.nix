@@ -19,6 +19,7 @@
           pkgs.caddy # web server / reverse proxy
           pkgs.coreutils # GNU core utilities
           pkgs.curl # http tool
+          pkgs.eza # modern alternative for ls
           pkgs.fd # fast alternative to find
           pkgs.ffmpeg # video toolkit
           pkgs.fish # current shell favorite
