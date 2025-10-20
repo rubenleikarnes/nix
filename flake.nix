@@ -96,6 +96,7 @@
           "tailscale-app" # vpn
           "tunnelblick" # openvpn client
           "teamviewer" # remote desktop
+          "thebrowsercompany-dia" # ai browser from arc creators
           "the-unarchiver" # archive extractor
           "utm" # virtual machine app
           "vlc" # media player
