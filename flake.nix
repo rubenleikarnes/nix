@@ -138,6 +138,7 @@
             "/Applications/Remote Desktop Manager.app"
             "/Applications/Obsidian.app"
             "/Applications/ChatGPT.app"
+            "/Applications/Claude.app"
         ];
         loginwindow.GuestEnabled = false; # disable guest login
         NSGlobalDomain.AppleICUForce24HourTime = true; # 24h clock
