@@ -87,6 +87,7 @@
           "obsidian" # markdown notes
           "ollama-app" # openai app
           "postman" # api tool
+          "rapidapi" # alternative to postman, native macos app
           "rectangle" # window manager
           "remote-desktop-manager" # rdp client
           "slack" # work chat
