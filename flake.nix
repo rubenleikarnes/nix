@@ -84,6 +84,7 @@
           "microsoft-auto-update" # updater for ms apps
           "microsoft-office-businesspro" # ms office
           "netnewswire" # rss reader
+          "obs" # streaming
           "obsidian" # markdown notes
           "ollama-app" # openai app
           "postman" # api tool
