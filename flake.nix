@@ -15,6 +15,7 @@
 
       environment.systemPackages =  # global installes from nix packages
         [
+          pkgs.avahi # mDNS discovery
           pkgs.bat # modern cat alternative
           pkgs.caddy # web server / reverse proxy
           pkgs.coreutils # GNU core utilities
