@@ -35,7 +35,6 @@
           pkgs.neovim # vim alternative
           pkgs.nixd # nix language server (required by nix)
           pkgs.nmap # network scanner
-          pkgs.ollama # local llm runner
           pkgs.openssl # tls/ssl toolkit
           pkgs.ripgrep # fast grep (required by nvim)
           pkgs.sshpass # non-interactive ssh password (required for AT300 config push)
@@ -88,7 +87,6 @@
           "netnewswire" # rss reader
           "obs" # streaming
           "obsidian" # markdown notes
-          "ollama-app" # openai app
           "postman" # api tool
           "rapidapi" # alternative to postman, native macos app
           "rectangle" # window manager
