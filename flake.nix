@@ -27,6 +27,7 @@
           pkgs.fzf # fuzzy finder
           pkgs.delta # better git diff viewer
           pkgs.git # version control
+          pkgs.git-lfs # git for large files
           pkgs.gitu # git tui
           pkgs.helix # nvim alternative
           pkgs.inetutils # telnet, ftp, etc (from apple)
