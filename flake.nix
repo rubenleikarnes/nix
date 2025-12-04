@@ -56,6 +56,7 @@
         ];
         casks = [
           "1password" # password manager
+          "affinity" # photo editing software
           "alfred" # spotlight alternative
           "arc" # chrome alternative
           "balenaetcher" # bootable usb creator
