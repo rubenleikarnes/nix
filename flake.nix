@@ -116,6 +116,7 @@
           Ivory = 6444602274; # mastodon client
           Hyperspace = 6739505345; # disk space reclaimer
           Things3 = 904280696; # task manager
+          Wireguard = 1451685025; # vpn client
         };
         onActivation.cleanup = "zap"; # removes old versions, caches etc
         onActivation.autoUpdate = true; # updates before install
