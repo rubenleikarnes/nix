@@ -63,6 +63,7 @@
           "brave-browser" # another chrome alternative
           "appgate-sdp-client" # work vpn
           "base" # sqlite editor
+          "bambu-studio" # 3d printer app from bambu
           "busycal" # calendar app
           "chatgpt" # openai desktop client
           "claude" # anthropic desktop client
