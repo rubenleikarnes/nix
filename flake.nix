@@ -59,6 +59,7 @@
           "affinity" # photo editing software
           "alfred" # spotlight alternative
           "arc" # chrome alternative
+          "autodesk-fusion" # 3d modeling
           "balenaetcher" # bootable usb creator
           "brave-browser" # another chrome alternative
           "appgate-sdp-client" # work vpn
