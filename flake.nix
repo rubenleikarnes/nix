@@ -28,7 +28,6 @@
           pkgs.delta # better git diff viewer
           pkgs.git # version control
           pkgs.git-lfs # git for large files
-          pkgs.gitu # git tui
           pkgs.helix # nvim alternative
           pkgs.inetutils # telnet, ftp, etc (from apple)
           pkgs.kubectl # k8s cli
@@ -43,6 +42,7 @@
           pkgs.tmux # terminal multiplexer
           pkgs.tldr # simplified man pages
           pkgs.wget # cli downloader
+          pkgs.yarn-berry # js packager
           pkgs.yt-dlp # youTube downloader
           pkgs.zoxide # smarter cd replacement
         ];
@@ -91,9 +91,11 @@
           "obs" # streaming
           "obsidian" # markdown notes
           "postman" # api tool
+          "powerphotos" # photo library manager
           "rapidapi" # alternative to postman, native macos app
           "rectangle" # window manager
           "remote-desktop-manager" # rdp client
+          "royal-tsx" # remote desktop manager
           "slack" # work chat
           "spotify" # music
           "sync" # file sync
@@ -107,6 +109,7 @@
           "vlc" # media player
           "waterfox-classic" # legacy browser
           "whatsapp" # messaging
+          "wifiman" #unifi vpn
           "wireshark-app" # network packet analyzer
           "zed" # code editor
           "zen" # firefox alternative
