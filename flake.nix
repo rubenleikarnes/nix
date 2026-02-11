@@ -69,6 +69,7 @@
           "chatgpt" # openai desktop client
           "claude" # anthropic desktop client
           "colorsnapper" # color picker tool
+          "daisydisk" # disk usage analyser
           "discord" # chat
           "docker-desktop" # container platform
           "figma" # photoshop alternative
