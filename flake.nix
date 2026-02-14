@@ -165,6 +165,17 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 5;
 
+      # Storage optimization
+      # # https://nixos.wiki/wiki/Storage_optimization
+      nix.optimise.automatic = true;
+      nix.settings.auto-optimise-store = true;
+
+      nix.gc = {
+        automatic = true;
+        interval = { Weekday = 0; Hour = 11; Minute = 0; };
+        options = "--delete-older-than 30d";
+      };
+
       nixpkgs.hostPlatform = "aarch64-darwin"; # target platform (Apple Silicon)
     };
   in
