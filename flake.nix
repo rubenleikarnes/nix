@@ -18,6 +18,7 @@
           pkgs.avahi # mDNS discovery
           pkgs.bat # modern cat alternative
           pkgs.caddy # web server / reverse proxy
+          pkgs.claude-code # claude ai
           pkgs.coreutils # GNU core utilities
           pkgs.curl # http tool
           pkgs.eza # modern alternative for ls
@@ -43,7 +44,7 @@
           pkgs.tldr # simplified man pages
           pkgs.wget # cli downloader
           pkgs.yarn-berry # js packager
-          pkgs.yt-dlp # youTube downloader
+          #pkgs.yt-dlp # youTube downloader
           pkgs.zoxide # smarter cd replacement
         ];
 
@@ -120,7 +121,6 @@
         ];
         masApps = {
           Ivory = 6444602274; # mastodon client
-          Hyperspace = 6739505345; # disk space reclaimer
           Things3 = 904280696; # task manager
           Wireguard = 1451685025; # vpn client
         };
