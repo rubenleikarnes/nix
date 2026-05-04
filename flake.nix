@@ -33,6 +33,7 @@
           pkgs.inetutils # telnet, ftp, etc (from apple)
           pkgs.kubectl # k8s cli
           pkgs.neovim # vim alternative
+          pkgs.net-snmp # network monitoring
           pkgs.nixd # nix language server (required by nix)
           pkgs.nmap # network scanner
           pkgs.openssl # tls/ssl toolkit
