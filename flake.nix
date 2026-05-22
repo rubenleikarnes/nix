@@ -6,7 +6,6 @@
     nix-darwin.url = "github:LnL7/nix-darwin"; # nix-darwin module system
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs"; # follow nixpkgs version
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew"; # nix-homebrew integration
-    nix-homebrew.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
