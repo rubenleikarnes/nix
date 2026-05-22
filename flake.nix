@@ -6,6 +6,7 @@
     nix-darwin.url = "github:LnL7/nix-darwin"; # nix-darwin module system
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs"; # follow nixpkgs version
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew"; # nix-homebrew integration
+    nix-homebrew.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
@@ -121,9 +122,9 @@
           "rafi/tap" # kubectl-config-import tap https://github.com/rafi/kubectl-config-import
         ];
         masApps = {
-          Ivory = 6444602274; # mastodon client
-          Things3 = 904280696; # task manager
-          Wireguard = 1451685025; # vpn client
+         # Ivory = 6444602274; # mastodon client
+         # Things3 = 904280696; # task manager
+         # Wireguard = 1451685025; # vpn client
         };
         onActivation.cleanup = "zap"; # removes old versions, caches etc
         onActivation.autoUpdate = true; # updates before install
@@ -141,7 +142,6 @@
             "/System/Applications/Mail.app"
             "/Applications/Slack.app"
             "/Applications/BusyCal.app"
-            "/Applications/Things3.app"
             "/Applications/1Password.app"
             "/Applications/Zed.app"
             "/Applications/Ghostty.app"
@@ -155,7 +155,31 @@
         NSGlobalDomain.AppleICUForce24HourTime = true; # 24h clock
         NSGlobalDomain.AppleInterfaceStyle = "Dark"; # dark mode
         NSGlobalDomain.KeyRepeat = 2; # fast key repeat
-        # universalaccess.closeViewScrollWheelToggle = true; # zoom toggle
+        NSGlobalDomain.NSMenuEnableActionImages = false; # remove menubar icons in Tahoe
+
+        system.defaults.CustomUserPreferences = {
+          "com.apple.symbolichotkeys" = {
+            AppleSymbolicHotKeys = {
+              # 27 = "Move focus to next window"
+              "27" = {
+                enabled = 1;
+                value = {
+                  parameters = [ 39 50 1048576 ]; # ⌘+'
+                  type = "standard";
+                };
+              };
+              #
+              # 52 = "Turn Dock Hiding On/Off"
+              "52" = {
+                enabled = 0;
+                value = {
+                  parameters = [ 65535 65535 0 ];
+                  type = "standard";
+                };
+              };
+            };
+          };
+        };
       };
 
       nix.settings.experimental-features = "nix-command flakes"; # enable flakes & nix-command
