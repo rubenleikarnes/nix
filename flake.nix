@@ -6,6 +6,7 @@
     nix-darwin.url = "github:LnL7/nix-darwin"; # nix-darwin module system
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs"; # follow nixpkgs version
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew"; # nix-homebrew integration
+    nix-homebrew.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
@@ -154,9 +155,8 @@
         NSGlobalDomain.AppleICUForce24HourTime = true; # 24h clock
         NSGlobalDomain.AppleInterfaceStyle = "Dark"; # dark mode
         NSGlobalDomain.KeyRepeat = 2; # fast key repeat
-        NSGlobalDomain.NSMenuEnableActionImages = false; # remove menubar icons in Tahoe
 
-        system.defaults.CustomUserPreferences = {
+        CustomUserPreferences = {
           "com.apple.symbolichotkeys" = {
             AppleSymbolicHotKeys = {
               # 27 = "Move focus to next window"
@@ -180,6 +180,11 @@
           };
         };
       };
+
+      # remove menubar icons in Tahoe
+      system.activationScripts.postActivation.text = ''
+        sudo -u ruben defaults write -g NSMenuEnableActionImages -bool NO
+      '';
 
       nix.settings.experimental-features = "nix-command flakes"; # enable flakes & nix-command
       programs.fish.enable = true; # enable Fish shell in nix-darwin
